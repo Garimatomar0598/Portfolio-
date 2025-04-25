@@ -434,20 +434,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent actual form submission
 
-    // Optionally, you can clear the form here
-    this.reset();
-
-    // Show the success message
-    const successMessage = document.getElementById("success-message");
-    successMessage.style.display = "block";
-
-    // Hide the message after 5 seconds (optional)
-    setTimeout(() => {
-      successMessage.style.display = "none";
-    }, 5000);
-  });
-</script>
+    

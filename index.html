@@ -1057,8 +1057,54 @@ Input validation both on frontend and backend.
       });
     </script>
     <script src="js/app.js"></script>
-    <script src="js/gallery-init.js"></script>
+    <script src="js/gallery-init.js"></script
+<script>
+  // Ensure script runs after page loads
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("sendMessage").addEventListener("click", function () {
+      // Input values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // Validation check
+      if (!name || !email || !phone || !message) {
+        alert("⚠️ Please fill in all required fields!");
+        return;
+      }
+
+      // 🟢 Apna WhatsApp number yahan likho (without +)
+      const phoneNumber = "918816029116"; // Example: 919876543210
+
+      // Message format
+      const whatsappMessage = `Hello Garima! 👋%0A
+You have a new message from your Portfolio:%0A%0A
+👩 Name: ${name}%0A
+💼 Company: ${company}%0A
+📧 Email: ${email}%0A
+📞 Phone: ${phone}%0A
+📝 Message: ${message}`;
+
+      // WhatsApp URL
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+      // Open WhatsApp
+      window.open(whatsappURL, "_blank");
+
+      // Optional feedback
+      alert("✅ Redirecting to WhatsApp...");
+    });
+
+  });
+</script>
+
+
+
+  
     <!-- Load Scripts End -->
-    <script src="userfeedback.js"></script>
+
   </body>
 </html>

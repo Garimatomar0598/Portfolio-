@@ -1,5 +1,4 @@
 
-<script>
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -34,4 +33,3 @@ You have a new message from your Portfolio:%0A%0A
 
   alert("Redirecting to WhatsApp to send your message...");
 });
-</script>

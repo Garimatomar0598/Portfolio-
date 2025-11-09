@@ -3,7 +3,8 @@
 
   
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8
+      <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Page Title -->
     <title>Garima Tomar Portfolio </title>
@@ -909,7 +910,7 @@ Input validation both on frontend and backend.
       
                   
                     <div class="col-12 form__item animate-in-up">
-                      <button class="btn btn-default btn-hover btn-hover-accent" type="button">
+                      <button class="btn btn-default btn-hover btn-hover-accent" type="button" id="sendMessage">
                         <span class="btn-caption">Send Message</span>
                         <i class="ph-bold ph-paper-plane-tilt"></i>
                       </button>
@@ -1059,48 +1060,50 @@ Input validation both on frontend and backend.
     <script src="js/app.js"></script>
     <script src="js/gallery-init.js"></script
 <script>
-  // Ensure script runs after page loads
+  // Wait until page fully loads
   document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById("sendMessage").addEventListener("click", function () {
-      // Input values
+    // Check if button exists
+    const sendBtn = document.getElementById("sendMessage");
+    if (!sendBtn) {
+      console.error("❌ sendMessage button not found in DOM!");
+      return;
+    }
+
+    // Add click event
+    sendBtn.addEventListener("click", function () {
+      console.log("✅ Send button clicked");
+
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const company = document.getElementById("company").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const message = document.getElementById("message").value.trim();
 
-      // Validation check
       if (!name || !email || !phone || !message) {
-        alert("⚠️ Please fill in all required fields!");
+        alert("⚠️ Please fill all required fields!");
         return;
       }
 
-      // 🟢 Apna WhatsApp number yahan likho (without +)
+      // 🟢 Apna WhatsApp number likho (without + sign)
       const phoneNumber = "918816029116"; // Example: 919876543210
 
-      // Message format
       const whatsappMessage = `Hello Garima! 👋%0A
-You have a new message from your Portfolio:%0A%0A
+New message from your portfolio:%0A%0A
 👩 Name: ${name}%0A
 💼 Company: ${company}%0A
 📧 Email: ${email}%0A
 📞 Phone: ${phone}%0A
 📝 Message: ${message}`;
 
-      // WhatsApp URL
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-
-      // Open WhatsApp
       window.open(whatsappURL, "_blank");
 
-      // Optional feedback
       alert("✅ Redirecting to WhatsApp...");
     });
 
   });
 </script>
-
 
 
   

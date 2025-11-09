@@ -900,9 +900,11 @@ Input validation both on frontend and backend.
               <!-- Contact Form Start -->
               <form class="form contact-form" id="contact-form">
                 <!-- Hidden Required Fields -->
-                <input type="hidden" name="project_name" value="Starter Template">
-                <input type="hidden" name="admin_email" value="support@mixdesign.club">
-                <input type="hidden" name="form_subject" value="Contact Form Message">
+              <input type="text" id="name" placeholder="Your Name*" required />
+  <input type="email" id="email" placeholder="Email Address*" required />
+  <input type="text" id="company" placeholder="Company Name" />
+  <input type="tel" id="phone" placeholder="Phone Number*" required />
+  <textarea id="message" placeholder="A Few Words*" required></textarea>
                 <!-- END Hidden Required Fields-->
                 <div class="container-fluid p-0">
                   <div class="row gx-0">

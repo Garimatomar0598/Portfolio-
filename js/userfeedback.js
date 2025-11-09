@@ -21,6 +21,10 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   let phoneNumber = "918816029116";
 
   // Open WhatsApp chat in new tab
-  let whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+  let whatsappURL = `https://wa.me/${8816029116}?text=${whatsappMessage}`;
   window.open(whatsappURL, "_blank");
 });
+
+
+
+alert("Redirecting to WhatsApp to send your message...");
